@@ -76,7 +76,7 @@ $(document).ready(function () {
 //    $('.vw_testimonio').load("views/vw_testimonio.html").remove();
 //    $('.vw_encuesta').load("views/vw_encuesta.html").remove();
 //    $('.vw_listPrecio').load("views/vw_listPrecio.html").remove();
-    console_clear();
+//console_clear();
 });
 $(function () {
     $('#WAButton').floatingWhatsApp({
@@ -147,11 +147,15 @@ $(document).ready(function () {
 /* ========= FILTRAR PRODUCTOS  ===============*/
 $(document).ready(function () {
     $('body').on('click', '[data-toggle="pill"]', function () {
-        id = this.id;
-        //alert(id);
-        $('.hide').show();
-        $('.hide').not('[aria-labelledby="' + id + '"]').hide();
-        //console.log('PRESS [OK]');
+        id = this.id; categoria = $(this).attr('categoria');
+        
+        if(categoria == "all"){
+            $('div[data-categoria]').fadeIn(300).show();
+        }else{
+            $.when($('div[data-categoria]').hide()).then(function(){
+                $('div[data-categoria="'+categoria+'"]').fadeIn(300).show();
+            });
+        }
     });
 });
 

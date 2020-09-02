@@ -12,13 +12,13 @@
         <div class="row inner-menu-box">
             <div class="col-3">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
-                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Todo</a>
-                    <a class="nav-link" data-toggle="pill" id="v-pills-alfajores-tab" href="#v-pills-alfajores" role="tab" aria-controls="v-pills-alfajores" aria-selected="false">Alfajores</a>
-                    <a class="nav-link" data-toggle="pill" id="v-pills-bizcochos-tab" href="#v-pills-bizcochos" role="tab" aria-controls="v-pills-bizcochos" aria-selected="false">Bizcochos</a>
-                    <a class="nav-link" data-toggle="pill" id="v-pills-cheescakes-tab" href="#v-pills-cheescakes" role="tab" aria-controls="v-pills-cheescakes" aria-selected="false">Cheescakes</a>
-                    <a class="nav-link" data-toggle="pill" id="v-pills-postres-tab" href="#v-pills-postres" role="tab" aria-controls="v-pills-postres" aria-selected="false">Postres</a>
-                    <a class="nav-link" data-toggle="pill" id="v-pills-tortas-tab" href="#v-pills-tortas" role="tab" aria-controls="v-pills-tortas" aria-selected="false">Tortas</a>
-                    <a class="nav-link" data-toggle="pill" id="v-pills-otros-tab" href="#v-pills-otros" role="tab" aria-controls="v-pills-otros" aria-selected="false">Otros</a>
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" categoria="all">Todo</a>
+                    <a class="nav-link" data-toggle="pill" id="v-pills-alfajores-tab" href="#v-pills-alfajores" role="tab" aria-controls="v-pills-alfajores" aria-selected="false" categoria="ALFAJORES">Alfajores</a>
+                    <a class="nav-link" data-toggle="pill" id="v-pills-bizcochos-tab" href="#v-pills-bizcochos" role="tab" aria-controls="v-pills-bizcochos" aria-selected="false" categoria="BIZCOCHOS">Bizcochos</a>
+                    <a class="nav-link" data-toggle="pill" id="v-pills-cheescakes-tab" href="#v-pills-cheescakes" role="tab" aria-controls="v-pills-cheescakes" aria-selected="false" categoria="CHEESCAKES">Cheescakes</a>
+                    <a class="nav-link" data-toggle="pill" id="v-pills-postres-tab" href="#v-pills-postres" role="tab" aria-controls="v-pills-postres" aria-selected="false" categoria="POSTRES">Postres</a>
+                    <a class="nav-link" data-toggle="pill" id="v-pills-tortas-tab" href="#v-pills-tortas" role="tab" aria-controls="v-pills-tortas" aria-selected="false" categoria="TORTAS">Tortas</a>
+                    <a class="nav-link" data-toggle="pill" id="v-pills-otros-tab" href="#v-pills-otros" role="tab" aria-controls="v-pills-otros" aria-selected="false" categoria="OTROS">Otros</a>
                 </div>
             </div> <!-- end col-3 -->
             <div class="col-9"> <!-- col 9 -->
@@ -33,48 +33,22 @@
                             <div v-for="key in data"> <!-- init foreach key_data -->
                                 <div style="float: left!important; margin-left:5px;" class="tab-pane fade show " id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                     <div style="float: left!important; margin-left:5px;" class=""> 
-                                                        
+
                                         <div v-for="all_array in key"> <!-- init todos -->
-                                            <div style="float: left!important; position: relative;" class="col-lg-4 col-md-6 special-grid drinks">
+                                            <div style="float: left!important; position: relative;" class="col-lg-4 col-md-6 special-grid drinks" v-bind:data-categoria="all_array.categoria">
+
                                                 <div style="float: left!important; position: relative;" class="gallery-single fix">
-                                                     <img v-bind:src="all_array.imagen" class="img-fluid" alt="Image">
+                                                    <img v-bind:src="all_array.imagen" class="img-fluid" alt="Image">
                                                     <div class="why-text">
                                                         <h4>{{all_array.nombre}}</h4>
                                                         <p>Categoria: {{all_array.categoria}} <br/> Sabor: {{all_array.sabor}} </p>
-<!--                                                        <h5> $7.79</h5>-->
+                                                        <!--<h5> $7.79</h5>-->
                                                     </div>
                                                 </div>
                                             </div>
-                                            
-                                            
-                                        </div><!-- end todos-->
-                                        </div>
-                                        </div>
-                                        
-                                        
-                                        
-                                <div hidden style="float: left!important; position: relative;" class="tab-pane fade hide" v-bind:data-class="key[0].id" v-bind:id="key[0].id" v-bind:aria-labelledby="key[0].id + '-tab'" role="tabpanel"> <!-- init tab panel -->
-                                    <div hidden class="" style="float: left!important; position: relative;"> <!-- init row --> 
-
-                                        <div v-for="value in key"> <!-- init foreach value_key -->
-                                            
-                                            <div style="float: left!important; position: relative;" class="col-lg-4 col-md-6 special-grid lunch"><!-- init col-->
-                                                <div style="float: left!important; position: relative;" class="gallery-single fix"><!-- init gallery-->
-                                                    <img v-bind:src="value.imagen" class="img-fluid" alt="Image">
-                                                    <div class="why-text"> <!-- init why text-->
-                                                        
-                                                        <h4>{{value.nombre}}</h4>
-                                                        <p>Categoria: {{value.categoria}} <br/> Sabor: {{value.sabor}} </p>
-                                                        <!-- <h5> Precio o descrip corta </h5> -->
-                                                    </div> <!-- end why text-->
-
-                                                </div> <!-- end gallery -->	
-                                            </div> <!-- end col-->
-                                        </div><!-- end foreach value_key-->
-
-
-                                    </div><!--end row -->
-                                </div><!--tab-pane-->
+                                        </div><!-- end v-for todos-->
+                                    </div>
+                                </div>
 
                             </div> <!-- end foreach key_data -->
 
@@ -134,16 +108,17 @@
                         {id_all:'v-pills-home', id: 'v-pills-bizcochos', nombre: 'BIZCOCHO DE CHOCOLATE', categoria: 'BIZCOCHOS', sabor: 'CAFE EXPRESSO', precio: '', imagen: ruta + 'bizcochos/BIZCOCHO-DE-CHOCOLATE-CAFE-EXPRESO-2.jpg', visible: true},
                     ],
                     CHEESCAKES: [
-                        {id_all:'v-pills-home', id: 'v-pills-cheescakes', nombre: 'CHEESCAKE DE FRESA', categoria: 'CHEESCAKE', sabor: 'FRESAS HORNEADAS', precio: '', imagen: ruta + 'cheescakes/CHEESCAKE-DE-FRESAS-HORNEADAS-0.jpg', visible: true},
-                        {id_all:'v-pills-home', id: 'v-pills-cheescakes', nombre: 'CHEESCAKE DE FRESA', categoria: 'CHEESCAKE', sabor: 'FRESAS HORNEADAS', precio: '', imagen: ruta + 'cheescakes/CHEESCAKE-DE-FRESAS-HORNEADAS-1.jpg', visible: true},
+                        {id_all:'v-pills-home', id: 'v-pills-cheescakes', nombre: 'CHEESCAKE DE FRESA', categoria: 'CHEESCAKES', sabor: 'FRESAS HORNEADAS', precio: '', imagen: ruta + 'cheescakes/CHEESCAKE-DE-FRESAS-HORNEADAS-0.jpg', visible: true},
+                        {id_all:'v-pills-home', id: 'v-pills-cheescakes', nombre: 'CHEESCAKE DE FRESA', categoria: 'CHEESCAKES', sabor: 'FRESAS HORNEADAS', precio: '', imagen: ruta + 'cheescakes/CHEESCAKE-DE-FRESAS-HORNEADAS-1.jpg', visible: true},
                     ],
                     OTROS: [
-                        {id: 'v-pills-home', nombre: 'CHEESCAKE OTRO', categoria: 'CHEESCAKE', sabor: 'FRESAS HORNEADAS', precio: '', imagen: ruta + 'cheescakes/CHEESCAKE-DE-FRESAS-HORNEADAS-0.jpg', visible: true},
-                        {id: 'v-pills-home', nombre: 'CHEESCAKE OTRO', categoria: 'CHEESCAKE', sabor: 'FRESAS HORNEADAS', precio: '', imagen: ruta + 'cheescakes/CHEESCAKE-DE-FRESAS-HORNEADAS-1.jpg', visible: true},
+                        {id_all:'v-pills-home', id: 'v-pills-otros', nombre: 'CREMA CHANTILLY', categoria: 'OTROS', sabor: 'FRESA MELOCOTON', precio: '', imagen: ruta + 'tortas/TORTA-CREMA-CHANTILLY-FRESAS-MELOCOTON-0.jpg', visible: true},
+                        {id_all:'v-pills-home', id: 'v-pills-otros', nombre: 'CHEESCAKE DE FRESA', categoria: 'OTROS', sabor: 'FRESAS HORNEADAS', precio: '', imagen: ruta + 'cheescakes/CHEESCAKE-DE-FRESAS-HORNEADAS-1.jpg', visible: true},
+                        {id_all:'v-pills-home', id: 'v-pills-otros', nombre: 'POSTRE PROFITEROLES', categoria: 'OTROS', sabor: '', precio: '', imagen: ruta + 'postres/POSTRE-PROFITEROLES-PERSONAL-0.jpg', visible: true},
+                    
                     ],
                     MANJARES: 'ARRAY MA',
-                    OTROS: 'ARRAY OT',
-
+                    
                 },
             ],
         }
