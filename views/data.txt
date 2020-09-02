@@ -1,0 +1,18 @@
+	{
+        categoria: "ALFAJORES",
+           nombre: "ALFAJOR TRADICIONALES",
+        misc: {
+            id: id_alfajores,
+            sabor: "AREQUIPE-COCO",
+            imagen: path_iProd+"alfajores/ALFAJORES-TRADICIONALES-AREQUIPE-COCO.jpg",
+           }
+    },
+    {
+        categoria: " ",
+           nombre: " ",
+        misc: {
+            id: " ",
+            sabor: " ",
+            imagen: path_iProd+"alfajores/ALFAJORES-TRADICIONALES-AREQUIPE-COCO.jpg",
+           }
+    },

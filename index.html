@@ -1,60 +1,127 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>tentempié | Restaurante en casa </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">   
 
-        * {
-            line-height: 1.2;
-            margin: 0;
-        }
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        html {
-            color: #888;
-            display: table;
-            font-family: sans-serif;
-            height: 100%;
-            text-align: center;
-            width: 100%;
-        }
+        <!-- Site Metas -->
+        <title>Tentempié - Bogotá </title>
+        <meta name="keywords" content="Tentempie, Catering, restaurante en casa, pasabocas, tortas, postres">
+        <meta name="description" content="Catering, restaurante en casa, pasabocas, tortas, postres y mucho más...">
+        <meta name="author" content="">
 
-        body {
-            display: table-cell;
-            vertical-align: middle;
-            margin: 2em auto;
-        }
+        <!-- Site Icons -->
+        <!--    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">-->
+        <link rel="shortcut icon" href="assets/images/favicon_x32.png" type="image/x-icon">
+        <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+        <!--Floating WhatsApp css-->
+        <link rel="stylesheet" href="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.css">
 
-        h1 {
-            color: #555;
-            font-size: 2em;
-            font-weight: 400;
-        }
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">    
+        <!-- Site CSS -->
+        <link rel="stylesheet" href="assets/css/style.css?v=123">    
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="assets/css/custom.css">
 
-        p {
-            margin: 0 auto;
-            width: 280px;
-        }
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-        @media only screen and (max-width: 280px) {
+    </head>
 
-            body, p {
-                width: 95%;
-            }
+    <body>
+        <div id="WAButton" style="z-index: 999;"></div>
+        <!-- Start header -->
+        <div class="vw_header"></div>
+        <div class="vw_slides"></div>
+        <div class="vw_about"></div>
 
-            h1 {
-                font-size: 1.5em;
-                margin: 0 0 0.3em;
-            }
+        <!--	 Start About 
+                <div class="about-section-box">
+                        <div class="container">
+                                <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+                                                <div class="inner-column">
+                                                        <h1>Welcome AAAA <span>Live Dinner Restaurant</span></h1>
+                                                        <h4>Little Story</h4>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
+                                                        <p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. Sed aliquam metus lorem, a pellentesque tellus pretium a. Nulla placerat elit in justo vestibulum, et maximus sem pulvinar.</p>
+                                                        <a class="btn btn-lg btn-circle btn-outline-new-white" href="#">+Información</a>
+                                                </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <img src="assets/images/about-img.jpg" alt="" class="img-fluid">
+                                        </div>
+                                </div>
+                        </div>
+                </div>-->
+        <!-- End About -->
 
-        }
+        <!-- Start QT -->
+        <div class="qt-box qt-background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <p class="lead ">
+                            " Nuestra mejor recompensa, es la satisfacción y las sonrisas que nos regalan nuestros clientes, 
+                            al brindarnos el placer de incluirnos en ese importante momento de sus vidas. "
+                        </p>
+                        <span class="lead">Mario Iván Díaz López</span>
+                        <p style="font-size: 20px; "> CEO Tentempié </p>
+                        <div id="productos"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End QT -->
 
-    </style>
-</head>
-<body>
-    <h1>Website en desarrollo</h1>
-    <p>Tentempié | Restaurante en casa </p>
-</body>
+        <!-- catalogo productos-->
+        <div class="vw_productos"></div>
+
+        <div class="vw_gallery"></div>
+        <div class="vw_frases"></div>
+        <div class="vw_contact"></div>
+        <div class="vw_footer"></div>
+
+
+        <a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+
+        <!-- ALL JS FILES -->
+        <script src="assets/js/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+        <!--Floating WhatsApp javascript-->
+        <script type="text/javascript" src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.js"></script>
+
+
+        <!-- MVC -->
+        <!--
+        <script src="https://www.jsviews.com/download/jsrender.min.js"></script>
+        <script src="https://www.jsviews.com/download/jquery.observable.min.js"></script>
+        <script src="https://www.jsviews.com/download/jquery.views.min.js"></script>
+        -->
+
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- ALL PLUGINS -->
+        <script src="assets/js/jquery.superslides.min.js"></script>
+        <script src="assets/js/images-loded.min.js"></script>
+        <script src="assets/js/isotope.min.js"></script>
+        <script src="assets/js/baguetteBox.min.js"></script>
+        <script src="assets/js/form-validator.min.js"></script>
+        <script src="assets/js/contact-form-script.js"></script>
+        <script src="assets/js/custom.js"></script>
+        <script src="assets/js/myJS.js?v=123"></script>
+
+
+        <div class="dev" id="dev"></div>     
+
+
+    </body>
 </html>
-
